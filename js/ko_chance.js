@@ -1,4 +1,4 @@
-﻿function getKOChanceText(damage, defender, field, hits, isBadDreams) {
+﻿function getKOChanceText(damage, defender, hp, field, hits, isBadDreams) {
     if (isNaN(damage[0])) {
         return 'something broke; please tell Austin or Marty';
     }
