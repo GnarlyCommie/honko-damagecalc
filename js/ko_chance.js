@@ -90,6 +90,19 @@
             eotText.push('Grassy Terrain recovery');
         }
     }
+    if (move.hasRecoil && move.hasHalfRecoil && (attacker.ability !== 'Magic Guard' && attacker.ability !== 'Rock Head')) {
+        eot -= Math.floor(attacker.curHP - (damage[0] * 0.5));
+        eotText.push('Recoil damage');
+    }
+    if (move.hasRecoil && move.hasThirdRecoil && (attacker.ability !== 'Magic Guard' && attacker.ability !== 'Rock Head')) {
+        eot -= Math.floor(attacker.curHP - (damage[0] * (1/3)));
+        eotText.push('Recoil damage');
+    }
+    if (move.hasRecoil && move.hasQauterRecoil && (attacker.ability !== 'Magic Guard' && attacker.ability !== 'Rock Head')) {
+        eot -= Math.floor(attacker.curHP - (damage[0] * 0.25));
+        eotText.push('Recoil damage');
+    }
+    
     var toxicCounter = 0;
     if (defender.status === 'Poisoned') {
         if (defender.ability === 'Poison Heal') {
